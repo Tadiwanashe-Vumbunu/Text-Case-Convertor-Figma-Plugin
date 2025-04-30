@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=match_case" />
+  </head>
+  <body>
+      </style>
+    <div class="container">
+      <div class="headerlogo">
+        <span class="material-symbols-outlined" style="font-family: sans-serif; font-size: 20px;">
+          Aa
+          </span>
+        <h3 id="heading_text">Text Case Convertor</h3>
+      </div>
+      
+      <div class="caseoption">
+        <h3 id="selectcase" style="margin-bottom: 2px;">Select text case</h3>
+        <select id="caseType">
+        <option value="uppercase">UPPERCASE</option>
+        <option value="lowercase">lowercase</option>
+        <option value="titlecase">Title Case</option>
+        <option value="sentencecase">Sentence case</option>
+      </select>
+      <br /><br />
+
+      <div class="button-container">
+        <button id="convertBtn" style="color: white;">Convert</button>
+        <button id="closeBtn" style="color: rgb(241, 41, 41);">Close</button>
+      </div>
+
+      <div id="toast" class="toast"></div>
+    
+      <script>
+        document.getElementById("convertBtn").onclick = () => {
+          const caseType = document.getElementById("caseType").value;
+          parent.postMessage(
+            { pluginMessage: { type: "convert-text-case", caseType } },
+            "*"
+          );
+        };
+        document.getElementById("closeBtn").onclick = () => {
+          parent.postMessage({ pluginMessage: { type: "close-plugin" } }, "*");
+        };
+
+      </script>
+
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body{	
+          display: flex;
+          justify-content: center;  
+          align-items: center;
+          width: 360px;
+          height: 360px;
+          background-color: #ffffff;
+          padding-top: 20px;
+          padding-left: 12px;
+        }
+
+        .container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 12px;
+          padding: 32px;
+          margin: 32px;
+          width: 300px;
+          height: 300px;
+          gap: 24px;
+        }	
+
+        .material-symbols-outlined{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          font-family: 'Material Symbols Outlined';
+          font-size: 36px;
+          color: white;
+          background-color: black;
+          border: none;
+          border-radius: 12px;
+        }
+
+        .headerlogo{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          height: 56px;
+          margin-top: 64px;
+        }
+
+        #caseType{
+          padding-right: 10px;
+          width: 18rem;
+          height: 56px;
+          border-radius: 12px;
+          border: rgba(0, 0, 0, 0.8) solid 2px;
+          font-family: "Poppins", sans-serif;
+          font-size: medium;
+    
+        }
+        section .icon{
+          padding-right: 8px;
+        }
+        /*option:active{
+          border: rgba(0, 0, 0, 0.8) solid 2px;
+        }*/
+
+        #heading_text{
+          font-family: "Poppins", sans-serif;
+          font-size: 24px;
+          font-style: medium;
+          font-weight: 350; 
+        }
+
+        #selectcase{
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-style: medium;
+          font-weight: 400; 
+        }
+
+        .caseoption{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: left;
+          margin-bottom: 60px;
+        }
+        
+        .button-container{
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 12px;
+          height: 48px;
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        button{
+          width: 100%;
+          height: 52px;
+          border-radius: 16px;
+          border: none;
+          font-family: "Poppins", sans-serif;
+          font-size: 18px;
+          font-style: medium;
+          font-weight: 400;
+        } 
+        button:hover{
+          transition: background-color 0.3s ease;
+          transition: fontsize 0.8s ease;
+          font-size: 19px;
+        
+        }
+        button:active{
+          border: white solid 2px;
+        }
+        
+        #convertBtn{
+          background-color: black;
+        }
+
+        #convertBtn:hover{
+          transition: background-color 0.3s ease;
+          transition: fontsize 0.8s ease;
+          font-size: 19px;
+          background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        #closeBtn{
+          width: 100%;
+          background-color: white;
+        }
+
+        #closeBtn:hover{
+          transition: background-color 0.3s ease;
+          transition: fontsize 0.8s ease;
+          font-size: 19px;
+          background-color: rgb(246, 175, 175, 0.3);
+        }
+
+      </style>
+    </div>
+
+  </body>
+</html>
