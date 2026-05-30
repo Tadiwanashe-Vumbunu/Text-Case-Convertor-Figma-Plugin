@@ -7,6 +7,6 @@ Provide options to convert text to:
 - Title Case
 - Sentence case
 
-It switches between taxe cases whilst maintaining the original styling (font, color, etc.)
-The UI is simple and intuitive with buttons for each case option
-Provide visual feedback when conversion is complete
+It switches between text cases whilst maintaining the original styling (typeface, color, etc.)
+The UI is simple and intuitive with buttons for each case option. 
+The plugin also provides visual feedback when conversion is complete
