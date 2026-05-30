@@ -1,4 +1,4 @@
-##Switch between text cases
+#Switch between text cases
 
 Allow users to select one or multiple text layers
 Provide options to convert text to: UPPERCASE, lowercase, Title Case, and Sentence case
